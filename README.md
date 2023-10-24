@@ -12,9 +12,9 @@ The implemented algorithms and problems are based on the book [Reinforcement Lea
 * matplotlib 3.7.1
 * gymnasium 0.28.1
   
-To install the required packages, run the following command:
-To install the base Gymnasium library, use 'pip install gymnasium'
-To specify the version of Gymnasium, use 'pip install gymnasium==0.28.1'
+To install the required packages, run the following command:   
+To install the base Gymnasium library, use `pip install gymnasium`     
+To specify the version of Gymnasium, use `pip install gymnasium==0.28.1`
 
 ## Implemented Algorithms
 * Chapter 4: Dynamic Programming
