@@ -6,6 +6,16 @@ The implemented algorithms and problems are based on the book [Reinforcement Lea
 
 「強化学習（第2版）」の日本語版は[こちら](https://www.morikita.co.jp/books/mid/082662).
 
+## Requirements
+* Python 3.10.11
+* numPy 1.24.3
+* matplotlib 3.7.1
+* gymnasium 0.28.1
+  
+To install the required packages, run the following command:
+To install the base Gymnasium library, use 'pip install gymnasium'
+To specify the version of Gymnasium, use 'pip install gymnasium==0.28.1'
+
 ## Implemented Algorithms
 * Chapter 4: Dynamic Programming
   * Value Iteration (Jack's Car Rental Problem)
