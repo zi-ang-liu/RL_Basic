@@ -4,7 +4,7 @@ This repository contains implementations of basic RL algorithms.
 
 The implemented algorithms and problems are based on the book [Reinforcement Learning: An Introduction (second edition)](http://incompleteideas.net/book/the-book-2nd.html) by Sutton and Barto.
 
-日本語バージョンは[こちら](https://www.morikita.co.jp/books/mid/082662).
+「強化学習（第2版）」の日本語版は[こちら](https://www.morikita.co.jp/books/mid/082662).
 
 ## Implemented Algorithms
 * Chapter 4: Dynamic Programming
