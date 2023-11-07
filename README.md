@@ -17,11 +17,14 @@ To install the base Gymnasium library, use `pip install gymnasium`
 To specify the version of Gymnasium, use `pip install gymnasium==0.28.1`
 
 ## Implemented Algorithms
+* Linear programming
+  * Linear programming (Cliff Walking Problem)
 * Chapter 4: Dynamic Programming
   * Value Iteration (Jack's Car Rental Problem)
 * Chapter 6: Temporal-Difference Learning
   * SARSA (Cliff Walking Problem)
   * Q-Learning (Cliff Walking Problem)
+
 
 ## Problems
 ### Jack's Car Rental Problem
