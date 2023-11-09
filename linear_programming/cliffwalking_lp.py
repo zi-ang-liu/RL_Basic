@@ -35,7 +35,7 @@ if __name__ == '__main__':
     # solve the mdp problem using linear programming
     model = lp_solver(r, p, gamma)
 
-    # value
+    # state value
     value_function = {}
     for state in reachable_state_set:
         value_function[state] = model.getVarByName(f'v_{state}').x
