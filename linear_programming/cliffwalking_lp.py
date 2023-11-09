@@ -2,35 +2,7 @@
 from gurobipy import GRB, Model, quicksum
 import gymnasium as gym
 import numpy as np
-
-def lp_solver(r, p, gamma):
-
-    n_state = r.shape[0]
-
-    # create a model instance
-    model = Model()
-
-    # create variables
-    for s in range(n_state):
-        model.addVar(name=f'v_{s}', lb=-GRB.INFINITY)
-    
-    # update the model
-    model.update()
-
-    # create constraints
-    for state in reachable_state_set:
-        for action in action_set:
-            model.addConstr(model.getVarByName(f'v_{state}') >= quicksum(
-                gamma * p[state, action, next_state] * model.getVarByName(f'v_{next_state}') for next_state in reachable_state_set ) + r[state, action])
-
-    # set objective
-    model.setObjective(quicksum(model.getVarByName(
-        f'v_{state}') for state in reachable_state_set ), GRB.MINIMIZE)
-
-    # optimize
-    model.optimize()
-
-    return model
+from lp_solver import lp_solver
 
 if __name__ == '__main__':
 
