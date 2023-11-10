@@ -40,18 +40,18 @@ if __name__ == '__main__':
     for state in reachable_state_set:
         value_function[state] = model.getVarByName(f'v_{state}').x
 
-    # action value
-    action_value_function = {}
+    policy = {}
+    for state in terminal_state_set:
+        value_function[47] = 0
+        
     for state in reachable_state_set:
-        action_value_function[state] = {}
+        q_max_value = -np.inf
         for action in action_set:
-            action_value_function[state][action] = r[state, action] + gamma * sum(
-                p[state, action, next_state] * value_function[next_state] for next_state in reachable_state_set)
-            
-    # optimal policy
-    optimal_policy = {}
-    for state in reachable_state_set:
-        optimal_policy[state] = max(action_value_function[state], key=action_value_function[state].get)
+            q_value_temp = sum([prob * (reward + gamma * value_function[next_state])
+                             for prob, next_state, reward, terminated in env.unwrapped.P[state][action]])
+            if q_value_temp > q_max_value:
+                q_max_value = q_value_temp
+                policy[state] = action
             
     # print value function 4*12, 1 digital after decimal point
 
@@ -67,8 +67,8 @@ if __name__ == '__main__':
     print('optimal policy = ')
     for i in range(4):
         for j in range(12):
-            if i * 12 + j in optimal_policy:
-                print(optimal_policy[i * 12 + j], end='\t')
+            if i * 12 + j in policy:
+                print(policy[i * 12 + j], end='\t')
             else:
                 print('x', end='\t')
         print()
