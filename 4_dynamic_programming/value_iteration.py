@@ -117,12 +117,12 @@ def value_iteration(dynamics, state_space, action_space, value, policy, theta=1e
         print('Iteration {}, delta = {}'.format(k, delta))
 
     for state in state_space:
-        best_value = -np.inf
+        q_max_value = -np.inf
         for action in action_space:
-            value_temp = sum([prob * (reward + gamma * value[next_state])
+            q_value_temp = sum([prob * (reward + gamma * value[next_state])
                              for (next_state, reward), prob in dynamics[state, action].items()])
-            if value_temp > best_value:
-                best_value = value_temp
+            if q_value_temp > q_max_value:
+                q_max_value = q_value_temp
                 policy[state] = action
     return value, policy
 
