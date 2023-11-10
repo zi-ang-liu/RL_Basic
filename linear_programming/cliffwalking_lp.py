@@ -73,4 +73,4 @@ if __name__ == '__main__':
                 print('x', end='\t')
         print()
 
-    model.write("lo1.lp")
+    model.write("model.lp")
